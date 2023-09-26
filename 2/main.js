@@ -44,9 +44,10 @@ console.log(car1.getCurrentSpeed);
 const intervalSpeed=setInterval(() => {
    car1.accelerate=20 
    mainDiv.innerHTML=car1.render()
- 
-    // car1.stop()
-   
+    if(car1.getCurrentSpeed+10==car1.MaximumSpeed)
+    {
+        clearInterval(intervalSpeed) 
+    }
 }, 1000);
 
 console.log(car1.getCurrentSpeed);
